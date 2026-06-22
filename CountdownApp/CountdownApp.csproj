@@ -7,8 +7,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <Target Name="Tailwind" BeforeTargets="Build;Publish">
-  <Exec Command="npm run build:css" CodeTask="true" FailOnError="true" />
+ <Target Name="Tailwind" BeforeTargets="Build;Publish">
+    <Exec Command="npm run build:css" />
   </Target>
 
   <Target Name="IncludeGeneratedAllAssets" AfterTargets="Tailwind" BeforeTargets="ComputeFilesToPublish">
