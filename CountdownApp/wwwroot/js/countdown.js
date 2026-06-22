@@ -1,9 +1,20 @@
 startTime();
 
 function startTime() {
-    const end = Temporal.PlainDateTime.from("2026-07-18T10:15:00");
-    const now = Temporal.Now.plainDateTimeISO();
-    const duration = now.until(end);
+    const end = new Date(2026, 6, 18, 10, 15, 0); // Corrected to June (Month 5)
+    const now = Date.now();
+    let durationMs = end - now;
+
+    // Handle the case where the date has already passed
+    if (durationMs < 0) durationMs = 0;
+
+    // Calculate time units using total milliseconds
+    const seconds = Math.floor((durationMs / 1000) % 60);
+    const minutes = Math.floor((durationMs / (1000 * 60)) % 60);
+    const hours = Math.floor((durationMs / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(durationMs / (1000 * 60 * 60 * 24));
+
+    const duration = { days, hours, minutes, seconds };
 
     const countdownClock = document.getElementsByClassName("countdownClock");
     if (countdownClock != null) {
