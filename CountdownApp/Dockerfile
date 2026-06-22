@@ -7,8 +7,8 @@ RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
 RUN apt-get install -y nodejs
 
 # 2. Copy the .csproj and the package.json files
-COPY ["CountdownApp.csproj", "./"]
-COPY ["package.json", "./"]
+COPY ["CountdownApp.csproj", "./CountdownApp"]
+COPY ["package.json", "./CountdownApp"]
 # If you have a package-lock.json, copy that too!
 # COPY ["package-lock.json", "./"]
 
