@@ -9,7 +9,6 @@
 
   <Target Name="Tailwind" BeforeTargets="Build;Publish">
   <Exec Command="npm run build:css" CodeTask="true" FailOnError="true" />
-</Target>
   </Target>
 
   <Target Name="IncludeGeneratedAllAssets" AfterTargets="Tailwind" BeforeTargets="ComputeFilesToPublish">
