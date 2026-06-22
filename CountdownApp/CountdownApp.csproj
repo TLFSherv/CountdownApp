@@ -6,8 +6,15 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
   <Target Name="Tailwind" BeforeTargets="Build;Publish">
-  <Exec Command="npm run build:css" />
-</Target>
+    <Exec Command="npm run build:css" />
+  </Target>
+
+  <Target Name="IncludeGeneratedAllAssets" AfterTargets="Tailwind" BeforeTargets="ComputeFilesToPublish">
+    <ItemGroup>
+      <Content Include="wwwroot\**" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
+    </ItemGroup>
+  </Target>
 
 </Project>
