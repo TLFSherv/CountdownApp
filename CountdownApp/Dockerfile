@@ -10,7 +10,7 @@ RUN apt-get install -y nodejs
 COPY ["CountdownApp.csproj", "./CountdownApp"]
 COPY ["package.json", "./CountdownApp"]
 # If you have a package-lock.json, copy that too!
-# COPY ["package-lock.json", "./"]
+COPY ["package-lock.json", "./CountdownApp"]
 
 # 3. Install both .NET and NPM dependencies
 RUN dotnet restore
