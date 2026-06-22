@@ -7,7 +7,6 @@ yarn-error.log*
 # .NET / Build
 bin/
 obj/
-wwwroot/css/output.css
 
 # Misc
 .DS_Store
