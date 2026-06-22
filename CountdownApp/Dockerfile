@@ -7,10 +7,10 @@ RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
 RUN apt-get install -y nodejs
 
 # 2. Copy the .csproj and the package.json files
-COPY ["CountdownApp.csproj", "./CountdownApp"]
-COPY ["package.json", "./CountdownApp"]
+COPY ["CountdownApp.csproj", "/CountdownApp"]
+COPY ["package.json", "/CountdownApp"]
 # If you have a package-lock.json, copy that too!
-COPY ["package-lock.json", "./CountdownApp"]
+COPY ["package-lock.json", "/CountdownApp"]
 
 # 3. Install both .NET and NPM dependencies
 RUN dotnet restore
