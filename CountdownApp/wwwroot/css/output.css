@@ -211,6 +211,9 @@
   .mt-30 {
     margin-top: calc(var(--spacing) * 30);
   }
+  .ml-2 {
+    margin-left: calc(var(--spacing) * 2);
+  }
   .flex {
     display: flex;
   }
