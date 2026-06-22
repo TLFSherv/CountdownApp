@@ -1,0 +1,22 @@
+/* This class handles the smooth transition */
+.word {
+  display: inline-block;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  margin-right: 4px;
+  color: whitesmoke;
+}
+
+.line.invisible {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hide {
+  display: none;
+}
+
+/* This class triggers the fade-in */
+.word.visible {
+  opacity: 1;
+}

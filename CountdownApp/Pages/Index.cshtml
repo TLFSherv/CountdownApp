@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Sherwin's";
+
+}
+
+<div class="m-2 h-full">
+    <h1 class="text-[#F5F5F5] text-sm">Sherwin's Countdown App</h1>
+    <div class="text-center space-y-50">
+        <partial name="_Countdown" />
+        <partial name="_LyricsContainer" />
+    </div>
+</div>
+
+
+<script src="~/js/countdown.js"></script>
+<script src="~/js/displayLyrics.js"></script>
