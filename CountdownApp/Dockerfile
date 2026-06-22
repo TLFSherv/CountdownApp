@@ -6,15 +6,13 @@ RUN apt-get update && apt-get install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
 RUN apt-get install -y nodejs
 
-# 2. Copy the .csproj and the package.json files
-COPY ["CountdownApp.csproj", "./"]
-COPY ["package.json", "./"]
-# If you have a package-lock.json, copy that too!
-COPY ["package-lock.json", "./"]
+# 2. Copy files to the explicit workdir paths
+COPY CountdownApp.csproj ./
+COPY package.json package-lock.json* ./
 
-# 3. Install both .NET and NPM dependencies
+# 3. Install dependencies
 RUN dotnet restore
-RUN npm install
+RUN npm ci # 'npm ci' is faster and more reliable in automated Docker environments than 'npm install'
 
 # 4. Copy the rest of the source code
 COPY . .
